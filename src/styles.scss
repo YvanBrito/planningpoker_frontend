@@ -1,0 +1,15 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fonte e cor de fundo padrão */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 10px;
+  color: #dddddd;
+  min-height: 100vh;
+  background-color: #222;
+}

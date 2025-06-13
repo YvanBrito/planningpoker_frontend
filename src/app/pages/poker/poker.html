@@ -1,0 +1,72 @@
+<header class="header">
+  <div class="header__title">
+    <h1>Card Game</h1>
+  </div>
+  <div class="header__controls">
+    <button class="btn btn--primary">Start Game</button>
+    <button class="btn btn--secondary">Reset Game</button>
+  </div>
+</header>
+<main class="main">
+  <div class="field">
+    <div class="grid-container">
+      <div class="central">
+        <div class="table">
+          <div class="table_internal">
+            <div class="table_internal_circle">
+              <button class="btn btn--primary">Revelar cartas</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item upper_left_corner">
+        <app-card [value]="'1'" [isFaceDown]="true" />
+        <span class="item__label">Pedro</span>
+      </div>
+      <div class="item">
+        <app-card [value]="'2'" [isFaceDown]="true" />
+        <span class="item__label">Juan</span>
+      </div>
+      <div class="item">
+        <app-card [value]="'3'" [isFaceDown]="true" />
+        <span class="item__label">Maria</span>
+      </div>
+      <div class="item">
+        <app-card [value]="'4'" [isFaceDown]="true" />
+        <span class="item__label">Jose</span>
+      </div>
+      <div class="item upper_right_corner">
+        <app-card [value]="'5'" [isFaceDown]="true" />
+        <span class="item__label">Ana</span>
+      </div>
+      <div class="item bottom_left_corner">
+        <app-card [value]="'6'" [isFaceDown]="true" />
+        <span class="item__label">Luis</span>
+      </div>
+      <div class="item bottom_right_corner">
+        <app-card [value]="'7'" [isFaceDown]="true" />
+        <span class="item__label">Elena</span>
+      </div>
+      <div class="item">
+        <app-card [value]="'8'" [isFaceDown]="true" />
+        <span class="item__label">Carlos</span>
+      </div>
+      <div class="item">
+        <app-card [value]="'999999999'" [isFaceDown]="true" />
+        <span class="item__label">Sofia</span>
+      </div>
+      <div class="item">
+        <app-card [value]="'10'" [isFaceDown]="true" />
+        <span class="item__label">Andres</span>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="footer">
+  <app-card [value]="'10'" [isFaceDown]="false" [playable]="true" />
+  <app-card [value]="'9999999999'" [isFaceDown]="false" [playable]="true" />
+  <app-card [value]="'4'" [isFaceDown]="false" [playable]="true" />
+  <app-card [value]="'6'" [isFaceDown]="false" [playable]="true" />
+  <app-card [value]="'2'" [isFaceDown]="false" [playable]="true" />
+  <app-card [value]="'3'" [isFaceDown]="false" [playable]="true" />
+</footer>

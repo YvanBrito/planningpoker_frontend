@@ -1,0 +1,146 @@
+$table_height: 100%;
+$table_curve: 25vw;
+
+$table_border_color: rgb(156, 47, 4);
+$internal_table_color: rgb(73, 143, 88);
+
+.header {
+  height: 10vh;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 78vh;
+}
+
+.footer {
+  height: 5rem;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #222;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+}
+
+.field {
+  width: 70vh;
+  height: 70vh;
+  min-width: 400px;
+  min-height: 400px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
+  grid-template-rows: auto auto auto auto;
+  height: 100%;
+}
+
+.btn {
+  border-radius: 0.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  &--primary {
+    background-color: rgb(156, 47, 4);
+    color: white;
+    border: none;
+    &:hover {
+      background-color: rgb(168, 59, 15);
+    }
+    &:active {
+      background-color: rgb(131, 41, 6);
+    }
+  }
+  &--secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid rgb(156, 47, 4);
+    &:hover {
+      border: 2px solid rgb(179, 54, 4);
+    }
+    &:active {
+      border: 2px solid rgb(128, 39, 4);
+    }
+  }
+}
+
+// --------------- Mesa -----------------------
+
+.table {
+  height: 100%;
+  width: 100%;
+  border-radius: $table_curve;
+  background-color: $table_border_color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 15px solid rgb(129, 40, 4);
+
+  &_internal {
+    height: 97%;
+    width: 98%;
+    border-radius: $table_curve;
+    background-color: $internal_table_color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &_circle {
+      height: 76%;
+      width: 85%;
+      border-radius: $table_curve;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+// --------------- Carta ---------------------
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+
+  &__label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+  }
+
+  &.upper_left_corner {
+    grid-row: 1 / span 2;
+  }
+
+  &.bottom_left_corner {
+    grid-row: 3 / span 2;
+  }
+
+  &.upper_right_corner {
+    grid-row: 1 / span 2;
+  }
+
+  &.bottom_right_corner {
+    grid-row: 3 / span 2;
+  }
+}
+
+.central {
+  grid-column: 2 / span 3; /* ocupa colunas 2, 3 e 4 */
+  grid-row: 2 / span 2; /* ocupa linhas 2 e 3 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,56 @@
+<div
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  "
+>
+  <form (ngSubmit)="onRegister()" #registerForm="ngForm">
+    <h2>Cadastro</h2>
+
+    <div>
+      <label for="username">Usuário</label><br />
+      <input
+        type="text"
+        id="username"
+        name="username"
+        required
+        [(ngModel)]="username"
+      />
+    </div>
+
+    <div style="margin-top: 10px">
+      <label for="password">Senha</label><br />
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        [(ngModel)]="password"
+      />
+    </div>
+
+    <div style="margin-top: 10px">
+      <label for="role">Role</label><br />
+      <select name="role" id="role" required [(ngModel)]="role">
+        <option value="USER">USER</option>
+        <option value="ADMIN">ADMIN</option>
+      </select>
+    </div>
+
+    <div style="margin-top: 20px; text-align: center">
+      <button type="submit" [disabled]="!registerForm.form.valid">
+        Cadastrar
+      </button>
+    </div>
+
+    <div *ngIf="successMessage" style="color: green; margin-top: 10px">
+      {{ successMessage }}
+    </div>
+
+    <div *ngIf="errorMessage" style="color: red; margin-top: 10px">
+      {{ errorMessage }}
+    </div>
+  </form>
+</div>

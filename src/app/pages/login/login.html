@@ -1,0 +1,54 @@
+<div
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  "
+>
+  <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+    <h2>Login</h2>
+
+    <div>
+      <label for="username">Usuário</label><br />
+      <input
+        type="text"
+        id="username"
+        name="username"
+        required
+        [(ngModel)]="username"
+      />
+    </div>
+
+    <div style="margin-top: 10px">
+      <label for="password">Senha</label><br />
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        [(ngModel)]="password"
+      />
+    </div>
+
+    <div style="margin-top: 20px; text-align: center">
+      <button type="submit" [disabled]="!loginForm.form.valid">Entrar</button>
+    </div>
+
+    <div *ngIf="token" style="margin-top: 10px; color: green">
+      Token JWT: {{ token }}
+    </div>
+
+    <div *ngIf="errorMessage" style="color: red; margin-top: 10px">
+      {{ errorMessage }}
+    </div>
+
+    <div style="margin-top: 10px">
+      <a routerLink="/register">Não tem conta? Cadastre-se</a>
+    </div>
+
+    <div style="margin-top: 5px">
+      <a routerLink="/protected">Ir para Área Protegida</a>
+    </div>
+  </form>
+</div>

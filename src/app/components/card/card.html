@@ -1,0 +1,13 @@
+<div class="card-flip-container" (click)="select()">
+  <div
+    class="card-flip"
+    [class.flipped]="isFaceDown()"
+    [class.playable]="playable()"
+    [class.selected]="isSelected()"
+  >
+    <div class="card-front">{{ value() }}</div>
+    <div class="card-back">
+        <div class="texture"></div>
+    </div>
+  </div>
+</div>

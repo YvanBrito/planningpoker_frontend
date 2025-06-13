@@ -1,0 +1,13 @@
+<div style="padding: 20px">
+  <h2>Área Protegida</h2>
+
+  <button (click)="getSecret()">Buscar Segredo</button>
+
+  <div *ngIf="message" style="margin-top: 20px">
+    <strong>Resposta do Backend:</strong> {{ message }}
+  </div>
+
+  <div style="margin-top: 20px">
+    <a (click)="this.logout()">Sair</a>
+  </div>
+</div>
