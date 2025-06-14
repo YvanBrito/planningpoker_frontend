@@ -1,0 +1,27 @@
+<main>
+  <input type="text" placeholder="Nome" />
+  <div class="options_container">
+    <div class="create_room">
+      <select
+        [(ngModel)]="seq"
+        name="cards"
+        id="cards"
+        aria-placeholder="Sequencia de cartas"
+      >
+        @for (item of sequencias; track item.key) {
+        <option [value]="item.key">{{ item.name }}</option>
+        }
+        <option value="custom">Custom</option>
+      </select>
+      @if(seq() === 'custom') {
+      <input type="text" />
+      } @else { {{ teste() }} }
+      <button (click)="criarSala()">Criar sala</button>
+    </div>
+    <div>ou</div>
+    <div class="join_room">
+      <input type="text" placeholder="Entrar em uma sala" />
+      <button>Entrar</button>
+    </div>
+  </div>
+</main>

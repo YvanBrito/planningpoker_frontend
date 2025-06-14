@@ -29,7 +29,7 @@ export class LoginComponent {
         this.token = res.token;
         this.errorMessage = '';
         localStorage.setItem('token', this.token);
-        this.router.navigate(['/poker']);
+        this.router.navigate(['/configurar-sala']);
       },
       error: (err) => {
         this.token = '';

@@ -1,23 +1,7 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './pages/login/login';
-import { RegisterComponent } from './pages/register/register';
-import { ProtectedComponent } from './pages/protected/protected';
-import { authGuard } from './auth-guard';
-import { Poker } from './pages/poker/poker';
+import { authRoutes } from './auth.routes';
+import { protectedRoutes } from './protected.routes';
 
-export const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  {
-    path: 'protected',
-    component: ProtectedComponent,
-    canActivate: [authGuard],
-  },
-  {
-    path: 'poker',
-    component: Poker,
-    canActivate: [authGuard],
-  },
-  { path: '**', redirectTo: 'login' },
-];
+export const routes: Routes = localStorage.getItem('token')
+  ? protectedRoutes
+  : authRoutes;
